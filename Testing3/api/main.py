@@ -34,6 +34,11 @@ except Exception as e:
 app = Flask(__name__)
 CORS(app)
 
+# --- API ROOT ---
+@app.route("/api")
+def api_root():
+    return jsonify({"message": "Welcome to the Cholo Pay API!"})
+
 # --- USER REGISTRATION ---
 @app.route("/api/register/user", methods=['POST'])
 def register_user():
